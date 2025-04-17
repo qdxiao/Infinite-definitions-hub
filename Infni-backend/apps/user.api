@@ -1,23 +1,28 @@
 syntax = "v1"
 
-info (
-	title:   "type title here"
-	desc:    "type desc here"
-	author:  "type author here"
-	email:   "type email here"
-	version: "type version here"
+type (
+	// 登录接口的请求体
+	LoginReq {
+		Name string `json:"name"`
+		Password string `json:"password"`
+		VerifyCode string `json:"verifyCode"`
+	}
+
+	// 登录接口的响应体
+	LoginResp {
+		UserId int64  `json:"userId"`
+		Name string `json:"name"`
+		Token string `json:"token"`
+		ExpireAt int64  `json:"expireAt"`
+	}
 )
-
-type request {}
-
-type response {}
 
 @server (
-	jwt:   Auth
-	group: template
+	group: login
 )
-service template {
-	@handler handlerName // TODO: replace handler name and delete this comment
-	get /users/id/:userId (request) returns (response)
+
+service user {
+	@handler Login
+	post /user/login (LoginReq) returns (LoginResp)
 }
 
