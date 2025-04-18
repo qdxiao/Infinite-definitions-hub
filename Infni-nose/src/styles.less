@@ -1,1 +1,138 @@
+
+// Custom Theming for NG-ZORRO
+// For more information: https://ng.ant.design/docs/customize-theme/en
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+
+// Override less variables to here
+// View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
+
+// @primary-color: #1890ff;
 /* You can add global styles to this file, and also import other style files */
+@theme: default;
+@ant-prefix: ant;
+@html-selector: html;
+
+// 主色调定义
+@primary-color: #82b1ff;  // 主色
+@primary-color-hover: #95bdff;  // 主色浅色
+@primary-color-active: #6b9fff;  // 主色深色
+@primary-color-outline: fade(@primary-color, 20%);
+@processing-color: @primary-color;
+
+// Info 相关颜色
+@info-color: @primary-color;
+@info-color-deprecated-bg: fade(@info-color, 10%);
+@info-color-deprecated-border: fade(@info-color, 30%);
+
+// Success 相关颜色
+@success-color: #4CAF50;  // 保持绿色但调整为更协调的色调
+@success-color-hover: #66BB6A;
+@success-color-active: #43A047;
+@success-color-outline: fade(@success-color, 20%);
+@success-color-deprecated-bg: fade(@success-color, 10%);
+@success-color-deprecated-border: fade(@success-color, 30%);
+
+// Warning 相关颜色
+@warning-color: #FFC107;  // 保持警告色但调整为更协调的色调
+@warning-color-hover: #FFCA28;
+@warning-color-active: #FFB300;
+@warning-color-outline: fade(@warning-color, 20%);
+@warning-color-deprecated-bg: fade(@warning-color, 10%);
+@warning-color-deprecated-border: fade(@warning-color, 30%);
+
+// Error 相关颜色
+@error-color: #FF5252;  // 调整为更现代的红色
+@error-color-hover: #FF6E6E;
+@error-color-active: #FF3D3D;
+@error-color-outline: fade(@error-color, 20%);
+@error-color-deprecated-bg: fade(@error-color, 10%);
+@error-color-deprecated-border: fade(@error-color, 30%);
+
+@highlight-color: @error-color;
+@normal-color: #e8e8e8;  // 调整为更柔和的灰色
+@white: #fff;
+@black: #000;
+
+// 主色调梯度
+@primary-1: fade(@primary-color, 10%);
+@primary-2: fade(@primary-color, 20%);
+@primary-3: fade(@primary-color, 30%);
+@primary-4: fade(@primary-color, 40%);
+@primary-5: fade(@primary-color, 50%);
+@primary-6: @primary-color;
+@primary-7: darken(@primary-color, 10%);
+@primary-8: darken(@primary-color, 20%);
+@primary-9: darken(@primary-color, 30%);
+@primary-10: darken(@primary-color, 40%);
+
+// 背景色调整
+@body-background: #fafafa;
+@component-background: #fff;
+@popover-background: @component-background;
+@popover-customize-border-color: #e8e8e8;
+
+// 字体相关
+@font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+'Noto Color Emoji';
+@code-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+
+// 文字颜色
+@text-color: rgba(0, 0, 0, 0.85);
+@text-color-secondary: rgba(0, 0, 0, 0.65);
+@text-color-inverse: @white;
+@heading-color: rgba(0, 0, 0, 0.85);
+@text-color-dark: fade(@white, 85%);
+@text-color-secondary-dark: fade(@white, 65%);
+@text-selection-bg: @primary-color;
+
+// 边框相关
+@border-radius-base: 4px;  // 调整为更现代的圆角
+@border-radius-sm: 2px;
+@border-color-base: #e8e8e8;
+@border-color-split: #f0f0f0;
+@border-color-inverse: @white;
+@border-width-base: 1px;
+@border-style-base: solid;
+
+// 阴影效果
+@shadow-color: rgba(0, 0, 0, 0.1);
+@shadow-color-inverse: @component-background;
+@box-shadow-base: 0 2px 8px @shadow-color;
+@shadow-1-up: 0 -6px 16px -8px rgba(0, 0, 0, 0.08);
+@shadow-1-down: 0 6px 16px -8px rgba(0, 0, 0, 0.08);
+@shadow-1-left: -6px 0 16px -8px rgba(0, 0, 0, 0.08);
+@shadow-1-right: 6px 0 16px -8px rgba(0, 0, 0, 0.08);
+@shadow-2: 0 3px 6px -4px rgba(0, 0, 0, 0.12);
+
+// 按钮相关
+@btn-primary-color: #fff;
+@btn-primary-bg: @primary-color;
+@btn-default-color: @text-color;
+@btn-default-bg: @component-background;
+@btn-default-border: @border-color-base;
+@btn-danger-color: #fff;
+@btn-danger-bg: @error-color;
+@btn-danger-border: @error-color;
+@btn-disable-color: @disabled-color;
+@btn-disable-bg: @disabled-bg;
+@btn-disable-border: @border-color-base;
+
+// 链接相关
+@link-color: @primary-color;
+@link-hover-color: lighten(@primary-color, 10%);
+@link-active-color: darken(@primary-color, 10%);
+
+// 禁用状态
+@disabled-color: fade(@black, 25%);
+@disabled-bg: @background-color-base;
+@disabled-active-bg: tint(@black, 90%);
+@disabled-color-dark: fade(@white, 35%);
+
+
+
+
+body{
+  width: 100%;
+  height: 100vh;
+}

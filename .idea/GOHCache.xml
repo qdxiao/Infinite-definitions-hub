@@ -1,6 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="GoORMHelperCache">
-    <option name="lastTimeChecked" value="1744729407029" />
+    <option name="schemaMapping">
+      <map>
+        <entry key="Config">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/config/config.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="HandlerNameLogic">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/logic/template/handlernamelogic.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Request">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Response">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/types/types.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ServiceContext">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/svc/servicecontext.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1744730492921" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/handler/routes.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1744730492921" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/handler/template/handlernamehandler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1744730492922" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/logic/template/handlernamelogic.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1744730492922" />
+              <option name="schema">
+                <list>
+                  <option value="HandlerNameLogic" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/svc/servicecontext.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1744730492921" />
+              <option name="schema">
+                <list>
+                  <option value="ServiceContext" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/Infni-backend/apps/api/internal/types/types.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1744730492921" />
+              <option name="schema">
+                <list>
+                  <option value="Request" />
+                  <option value="Response" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/Infni-backend/apps/api/template.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1744730492921" />
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="config" value="Config" />
+        <entry key="handler_name_logic" value="HandlerNameLogic" />
+        <entry key="request" value="Request" />
+        <entry key="response" value="Response" />
+        <entry key="service_context" value="ServiceContext" />
+      </map>
+    </option>
+    <option name="lastTimeChecked" value="1744972127508" />
   </component>
 </project>
