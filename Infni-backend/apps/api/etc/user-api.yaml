@@ -1,0 +1,8 @@
+Name: user-api
+Host: 0.0.0.0
+Port: 8888
+MysqlConfig:
+  DataSource: root:root@tcp(127.0.0.1:3306)/infinite_community?parseTime=true
+  MaxOpenConns: 100
+  MaxIdleConns: 10
+  ConnectTimeout: 5

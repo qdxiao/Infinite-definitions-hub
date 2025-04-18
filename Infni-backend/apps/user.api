@@ -3,26 +3,38 @@ syntax = "v1"
 type (
 	// 登录接口的请求体
 	LoginReq {
-		Name string `json:"name"`
-		Password string `json:"password"`
+		Name       string `json:"name"`
+		Password   string `json:"password"`
 		VerifyCode string `json:"verifyCode"`
 	}
-
 	// 登录接口的响应体
 	LoginResp {
-		UserId int64  `json:"userId"`
-		Name string `json:"name"`
-		Token string `json:"token"`
+		UserId   int64  `json:"userId"`
+		Name     string `json:"name"`
+		Token    string `json:"token"`
 		ExpireAt int64  `json:"expireAt"`
 	}
 )
 
-@server (
-	group: login
+type (
+	// 注册接口请求体
+	RegisterReq {
+		Username   string `json:"username"`
+		Password   string `json:"password"`
+		VerifyCode string `json:"verifyCode"`
+	}
+	// 注册接口响应体
+	RegisterResp  {}
 )
 
-service user {
+@server (
+	group: account
+)
+service user-api {
 	@handler Login
 	post /user/login (LoginReq) returns (LoginResp)
+
+	@handler Register
+	post /user/register (RegisterReq) returns (RegisterResp)
 }
 

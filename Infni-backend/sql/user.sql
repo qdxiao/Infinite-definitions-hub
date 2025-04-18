@@ -1,3 +1,5 @@
+CREATE DATABASE infinite_community;
+USE infinite_community;
 CREATE TABLE `user` (
     `id` BIGINT NOT NULL AUTO_INCREMENT COMMENT '主键ID',
     `username` VARCHAR(12) NOT NULL DEFAULT '' COMMENT '用户昵称',

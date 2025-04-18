@@ -1,24 +1,24 @@
-package template
+package account
 
 import (
 	"net/http"
 
 	"github.com/zeromicro/go-zero/rest/httpx"
-	"infni-backend/apps/api/internal/logic/template"
+	"infni-backend/apps/api/internal/logic/account"
 	"infni-backend/apps/api/internal/svc"
 	"infni-backend/apps/api/internal/types"
 )
 
-func HandlerNameHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func RegisterHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		var req types.Request
+		var req types.RegisterReq
 		if err := httpx.Parse(r, &req); err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 			return
 		}
 
-		l := template.NewHandlerNameLogic(r.Context(), svcCtx)
-		resp, err := l.HandlerName(&req)
+		l := account.NewRegisterLogic(r.Context(), svcCtx)
+		resp, err := l.Register(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 		} else {
