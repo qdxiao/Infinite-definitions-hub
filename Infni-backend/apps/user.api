@@ -24,7 +24,10 @@ type (
 		VerifyCode string `json:"verifyCode"`
 	}
 	// 注册接口响应体
-	RegisterResp  {}
+	RegisterResp {
+		Code int    `json:"code"`
+		Msg  string `json:"msg"`
+	}
 )
 
 @server (

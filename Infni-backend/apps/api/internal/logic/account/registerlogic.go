@@ -2,7 +2,7 @@ package account
 
 import (
 	"context"
-	"errors"
+	"net/http"
 
 	"infni-backend/apps/api/internal/model"
 	"infni-backend/apps/api/internal/svc"
@@ -31,7 +31,10 @@ func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.RegisterRe
 	_, err = userModel.FindOneByUsername(l.ctx, req.Username)
 	if err != nil {
 		l.Logger.Errorf("查询用户失败，原因：%v", err)
-		return nil, errors.New("该用户已存在")
+		return &types.RegisterResp{
+			Code: http.StatusInternalServerError,
+			Msg:  "注册失败,用户已存在",
+		}, nil
 	}
 
 	// 2. 插入用户
@@ -40,8 +43,13 @@ func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.RegisterRe
 		Password: req.Password,
 	}); err != nil {
 		l.Logger.Errorf("插入用户失败，原因：%v", err)
-		return nil, errors.New("注册失败")
+		return &types.RegisterResp{
+			Code: http.StatusInternalServerError,
+			Msg:  "注册失败,请稍后重试!",
+		}, nil
 	}
-
-	return
+	return &types.RegisterResp{
+		Code: http.StatusOK,
+		Msg:  "注册成功",
+	}, nil
 }
