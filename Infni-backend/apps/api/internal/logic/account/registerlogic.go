@@ -27,7 +27,7 @@ func NewRegisterLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Register
 
 func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.RegisterResp, err error) {
 	// 1. 根据用户名查询该用户是否存在
-	userModel := model.NewUserModel(l.svcCtx.Mysql)
+	userModel := l.svcCtx.UserModel
 	_, err = userModel.FindOneByUsername(l.ctx, req.Username)
 	if err != nil {
 		l.Logger.Errorf("查询用户失败，原因：%v", err)
@@ -41,6 +41,7 @@ func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.RegisterRe
 	if _, err := userModel.Insert(l.ctx, &model.User{
 		Username: req.Username,
 		Password: req.Password,
+		Account:  req.Username,
 	}); err != nil {
 		l.Logger.Errorf("插入用户失败，原因：%v", err)
 		return &types.RegisterResp{
