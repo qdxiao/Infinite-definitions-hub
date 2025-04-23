@@ -5,8 +5,42 @@
       <h1>{{ title }}</h1>
       <p>{{ subtitle }}</p>
     </div>
-    <div>
-      shuru
+    <div class="login-card-input">
+      <form nz-form [formGroup]="validateLoginForm" (ngSubmit)="submitForm()" style="width: 100%;" [nzLayout]="'vertical'">
+        <nz-form-item style="margin-bottom: 20px">
+          <nz-form-label  nzRequired nzFor="email">邮箱</nz-form-label>
+          <nz-form-control nzErrorTip="输入的电子邮件无效！">
+            <input nz-input formControlName="email" id="email" class="card-input-item" placeholder="请输入邮件！"/>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label nzFor="password" nzRequired>密码</nz-form-label>
+          <nz-form-control  nzErrorTip="请输入您的密码！">
+            <input nz-input type="password" id="password" formControlName="password" class="card-input-item" placeholder="请输入密码!"/>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item style="display: flex;justify-content: center">
+          <nz-form-control >
+            <button nz-button nzType="primary" style="width: 100%" class="primary">登录</button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+      <nz-divider nzPlain nzText="或"></nz-divider>
+      <div nz-row nzJustify="space-evenly" style="margin-top: 20px">
+        <button nz-button nzType="default" nzShape="circle" style="width: 40px;height: 40px">
+          <nz-icon nzType="search" />
+        </button>
+        <button nz-button nzType="default" nzShape="circle" style="width: 40px;height: 40px">
+          <nz-icon nzType="search" />
+        </button>
+        <button nz-button nzType="default" nzShape="circle" style="width: 40px;height: 40px">
+          <nz-icon nzType="search" />
+        </button>
+      </div>
+      <div style="display: flex;justify-content: center;align-items: baseline;margin-top: 20px">
+        <span>还没有账号?</span>
+        <a nz-button nzType="link">立即注册</a>
+      </div>
     </div>
   </nz-card>
 </div>
