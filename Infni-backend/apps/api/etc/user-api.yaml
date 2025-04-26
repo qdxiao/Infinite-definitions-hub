@@ -6,3 +6,6 @@ MysqlConfig:
   MaxOpenConns: 100
   MaxIdleConns: 10
   ConnectTimeout: 5
+Jwt:
+  Expire: 604800 # token有效期7天
+  Secret: nH!J7vyof5x&E0&W2Y
