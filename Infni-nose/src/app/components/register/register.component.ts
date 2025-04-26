@@ -1,5 +1,4 @@
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { NzCardModule } from 'ng-zorro-antd/card';
+import { Component, inject } from '@angular/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -13,13 +12,10 @@ import {
 } from '@angular/forms';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import {LoginComponent} from '../../components/login/login.component';
-import {RegisterComponent} from '../../components/register/register.component';
-
+import {NzFlexDirective} from 'ng-zorro-antd/flex';
 @Component({
-  selector: 'app-l-tor',
+  selector: 'app-register',
   imports: [
-    NzCardModule,
     ReactiveFormsModule,
     NzButtonModule,
     NzCheckboxModule,
@@ -29,23 +25,18 @@ import {RegisterComponent} from '../../components/register/register.component';
     NzDividerModule,
     NzIconModule,
     NzGridModule,
-    RegisterComponent,
-    LoginComponent,
+    NzFlexDirective,
   ],
-  templateUrl: './l-tor.component.html',
-  styleUrl: './l-tor.component.less'
+  templateUrl: './register.component.html',
+  styleUrl: './register.component.less'
 })
-export class LTorComponent {
-  title="Infni Community";
-  subtitle="探索无限可能得星球"
-  isLogin = true;
-
+export class RegisterComponent {
   private login = inject(NonNullableFormBuilder);
+
   validateLoginForm = this.login.group({
     email: this.login.control('', [Validators.email, Validators.required]),
     password: this.login.control('', [Validators.required]),
   });
-
 
   submitForm(): void {
     if (this.validateLoginForm.valid) {
@@ -59,9 +50,5 @@ export class LTorComponent {
         }
       });
     }
-  }
-
-  switcher(){
-    this.isLogin = !this.isLogin;
   }
 }
